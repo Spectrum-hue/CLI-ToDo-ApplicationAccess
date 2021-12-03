@@ -24,13 +24,13 @@ public class Main {
 
 private static final String Date = null;
 	
-
+        // The main method contain one mthod initself which execute all the other methods
 	public static void main(String[] args) throws IOException, ParseException {
 		// TODO Auto-generated method stub
 		
 		todo();
 	}
-	 
+	// The to todo method includes other methods in a "waterfall" fashion.
 	public static void todo() throws IOException, ParseException {
 		String choice = null;
 		while (choice != "exit") {	
@@ -55,7 +55,7 @@ private static final String Date = null;
 	    	System.out.println("                      |_|  |_____||____/ |_____| ");
 	    	System.out.println("  ");
 	    	}
-	
+	// Read all the completed tasks
 	private static void completedTasks()  {
 		int completed = 0;
 		File myWriter = new File("complete.txt");
@@ -76,7 +76,7 @@ private static final String Date = null;
 		}
 		System.out.print( "\n"  +"You have " + "completed " + completed + " " + "tasks");
 	}
-	
+	// Read incompleted tasks
 	private static void incompletedTasks()  {
 		int wordCounter = 0;
 		File mysWriter = new File("Incomplete.txt");
@@ -101,7 +101,7 @@ private static final String Date = null;
 		
 		}	
 	
-		
+	// This method add a todo record	
 	public static void no() throws IOException {	
 		
 		System.out.println("Print out the ID");
@@ -130,6 +130,7 @@ private static final String Date = null;
 		
 		System.out.print("Successfull" + "\n");
 	}
+	// Delete a todo record
 	public static void done() throws IOException  {	
 		System.out.println("Choose the ID (will delete the project) you want to delete by entering the ID from the list: ");
 		viewInComplete();
@@ -185,8 +186,7 @@ private static final String Date = null;
 		FileReader fl = new FileReader("temp.txt");
         
          //FileReader will open that file from that
-         //directory, if there is no file found it will
-        // through an IOException
+         //directory
 
         // Creating a FileWriter object
         FileWriter ew = new FileWriter("Incomplete.txt");
@@ -207,25 +207,16 @@ private static final String Date = null;
 	            FileReader fr = new FileReader("temp.txt");
 	           
 	            // FileReader will open that file from that
-	            // directory, if there is no file found it will
-	            // through an IOException
+	            // directory
 	  
 	            // Creating a FileWriter object
-	            FileWriter iw = new FileWriter("Incomplete.txt");
-	  
-	            // It will create a new file with name
-	            // "Incomplete", if it is already available,
-	            // then it will open that instead
+	            FileWriter iw = new FileWriter("Incomplete.txt")
 	  
 	            // Declearing a blank string in which
 	            // whole content of file is to be stored
 	            String str = "";
 	  
 	            int i;
-	  
-	            // read() method will read the file character by
-	            // character and print it until it end the end
-	            // of the file
 	  
 	            // Condition check
 	            // Reading the file using read() method which
@@ -255,7 +246,7 @@ private static final String Date = null;
 	                "File reading and writing both done");
 	        }
 	       
-	     
+	// Update a record     
 	public static void update() throws IOException {
 		
 		 BufferedReader file = new BufferedReader(new FileReader("Incomplete.txt"));
@@ -305,7 +296,7 @@ private static final String Date = null;
 	}
 	}
 	
-	
+	// Menu method - Main
 	public static void menu() throws IOException, ParseException {
 	System.out.println("\n\n**** Type 'add', followed by a sentence, to add a todo.************");
 	System.out.println("**** Type 'done', followed by the todo ID, to complete a todo. ****");
